@@ -1,0 +1,31 @@
+@import "../../assets/scss//base/variables";
+
+.cta{
+    padding: 61px 0 56px;
+    background-color: $colorSecond;
+    background-image: url("../../assets//images/bg-boost-desktop.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+
+    &__body{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__title{
+        text-align: center;
+        color: #fff;
+    }
+
+    &__btn{
+        padding: 13px 0;
+
+        &:hover{
+            background: #fff;
+            border-color: #fff;
+        }
+    }
+}

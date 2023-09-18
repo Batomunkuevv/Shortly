@@ -1,0 +1,35 @@
+.hero {
+    padding-top: 50px;
+    padding-bottom: 67px;
+    overflow: hidden;
+    background: #fff;
+
+    &__container {
+        padding-left: calc((100% - 1107px) / 2);
+    }
+
+    &__body {
+        display: flex;
+        align-items: center;
+        gap: 71px;
+    }
+
+    &__content {
+        max-width: 592px;
+    }
+
+    &__text {
+        margin-bottom: 38px;
+        font-size: 22px;
+        letter-spacing: 0.1px;
+    }
+
+    &__image{
+        margin-right: -134px;
+        width: 57.6%;
+
+        & img{
+            pointer-events: none;
+        }
+    }
+}

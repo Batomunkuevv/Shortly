@@ -1,0 +1,64 @@
+@import "../../assets//scss//base//variables";
+
+.site-footer {
+    padding: 70px 0;
+    background: $colorThird;
+
+    &__body {
+        display: flex;
+        align-items: start;
+    }
+
+    &__logo {
+        margin-right: auto;
+    }
+
+    &__socials {
+        margin-top: 2px;
+        display: flex;
+        align-items: center;
+        gap: 24px;
+    }
+
+    &__social-link{
+        color: #fff;
+        transition: all 0.3s ease-in-out 0s;
+
+        &:hover{
+            color: $colorMain;
+        }
+    }
+}
+
+.footer-menu {
+    margin-right: 100px;
+    display: flex;
+    align-items: start;
+    gap: 92px;
+
+    &__column {
+        &-title {
+            margin-bottom: 22px;
+            display: block;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 700;
+        }
+    }
+
+    &__item {
+        &:not(:last-child) {
+            margin-bottom: 8px;
+        }
+    }
+
+    &__link {
+        color: $colorFontGray;
+        transition: all 0.3s ease-in-out 0s;
+        letter-spacing: -0.7px;
+
+        &:hover{
+            color: $colorMain;
+        }
+    }
+}

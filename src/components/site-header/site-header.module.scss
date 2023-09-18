@@ -1,0 +1,74 @@
+@import "../../assets//scss//base//variables";
+
+.site-header {
+    position: fixed;
+    top: 27px;
+    width: 100%;
+    z-index: 100;
+    transition: all 0.3s ease-in-out 0s;
+
+    &.is-scrolling-down {
+        transform: translate(0, calc(-100% - 27px));
+    }
+
+    &__container {
+        max-width: calc($maxWidthContainer + 30px);
+        padding: 0 30px;
+        background: #fff;
+        border-radius: 50px;
+        transition: all 0.3s ease-in-out 0s;
+
+        &.is-scrolling {
+            box-shadow: 0 24px 48px rgba(25, 29, 50, 0.1);
+        }
+    }
+
+    &__body {
+        padding: 24px 0;
+        display: flex;
+        align-items: center;
+        gap: 46px;
+    }
+
+    &__panel {
+        margin-top: -3px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex: 1 1 auto;
+    }
+
+    &__login {
+        padding: 0 32px;
+        font-weight: 700;
+        font-size: 16px;
+        color: $colorFont;
+        transition: all 0.3s ease-in-out 0s;
+
+        &:hover {
+            color: $colorMain;
+        }
+    }
+
+    &__user-actions {
+        display: flex;
+        align-items: center;
+    }
+}
+
+.menu {
+    &__list {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+    }
+
+    &__link {
+        color: $colorFont;
+        transition: all 0.3s ease-in-out 0s;
+
+        &:hover {
+            color: $colorMain;
+        }
+    }
+}

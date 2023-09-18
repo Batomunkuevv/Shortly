@@ -1,0 +1,65 @@
+@import "../../assets/scss//base/variables";
+
+.result {
+    padding: 17px 23px 15px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    background: #fff;
+    border-radius: 8px;
+
+    &:not(:last-child) {
+        margin-bottom: 16px;
+    }
+
+    &__right {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+    }
+
+    &__initial {
+        display: block;
+        color: $colorFontTitles;
+        font-size: 20px;
+        line-height: 124%;
+        max-width: 50%;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    &__link {
+        color: $colorMain;
+        font-size: 20px;
+        line-height: 124%;
+    }
+
+    &__btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 8px;
+        border-radius: 8px;
+        width: 102px;
+        flex: none;
+        background: $colorMain;
+        border: 1px solid transparent;
+        transition: all 0.3s ease-in-out 0s;
+        color: #fff;
+        font-weight: 700;
+        font-size: 16px;
+
+        &.is-copied {
+            background: $colorSecond;
+            
+        }
+
+        &:hover {
+            border-color: $colorMain;
+            color: $colorMain;
+            background: unset;
+        }
+    }
+}

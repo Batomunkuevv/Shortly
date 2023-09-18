@@ -1,0 +1,155 @@
+html,
+body {
+    font-family: $fontFamily;
+    font-size: 16px;
+    line-height: 150%;
+    color: $colorFont;
+    font-weight: 400;
+
+    &::-webkit-scrollbar {
+        width: 4px;
+        height: 4px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: 0 0;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: $colorMain;
+        border-radius: 20px;
+        border: 1px solid transparent;
+    }
+
+    scrollbar-width: 4px;
+    scrollbar-color: $colorMain #fff;
+}
+
+::selection {
+    background: $colorMain;
+    color: #fff;
+}
+
+body {
+    &.lock {
+        overflow: hidden;
+    }
+}
+
+// Titles
+
+h1,
+h2,
+h3,
+h4 {
+    font-weight: 700;
+    font-family: $fontFamilyTitles;
+    color: $colorFontTitles;
+}
+
+h1 {
+    font-size: 77px;
+    line-height: 120%;
+}
+
+h2 {
+    margin-bottom: 28px;
+    line-height: 125%;
+    font-size: 38px;
+}
+
+h3 {
+}
+
+// Section
+
+section {
+    background: #f0f1f6;
+}
+
+// P
+
+p {
+    line-height: 150%;
+
+    & + p {
+    }
+
+    & + ul {
+    }
+
+    & + ol {
+    }
+}
+
+// Ul, Ol
+
+ol,
+ul {
+    & + p {
+    }
+
+    & + h2 {
+    }
+
+    & + h3 {
+    }
+}
+
+// Img
+
+img {
+    max-width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+// Svg
+
+svg {
+    max-width: 100%;
+}
+
+// Visually hidden
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+// btn
+
+.button {
+    padding: 16px;
+    width: 196px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $colorMain;
+    border: 1px solid transparent;
+    transition: all 0.3s ease-in-out 0s;
+    border-radius: 28px;
+    color: #fff;
+    font-weight: 700;
+    font-size: 20px;
+
+    &--small {
+        padding: 8px 22px;
+        width: auto;
+        font-size: 16px;
+    }
+
+    &:hover {
+        border-color: $colorMain;
+        color: $colorMain;
+        background: unset;
+    }
+}
