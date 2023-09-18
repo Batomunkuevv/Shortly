@@ -1,4 +1,4 @@
-import { useState, FormEvent, ChangeEvent } from "react";
+import { useState, useEffect, FormEvent, ChangeEvent } from "react";
 import shortStyles from "./short.module.scss";
 import classNames from "classnames";
 import { isValidUrl } from "../../utils/functions";
@@ -40,6 +40,7 @@ export const ShortSection = () => {
 
                 setLinks([...links, link]);
                 setIsLoading(false);
+                localStorage.setItem("links", JSON.stringify([...links, link]));
             });
 
         setValue("");
@@ -65,6 +66,14 @@ export const ShortSection = () => {
             navigator.clipboard.writeText(link.result);
         }
     };
+
+    useEffect(() => {
+        const links = localStorage.getItem('links');
+
+        if(links){
+            setLinks(JSON.parse(links));
+        }
+    }, []);
 
     return (
         <section id="short" className={shortStyles["short"]}>
