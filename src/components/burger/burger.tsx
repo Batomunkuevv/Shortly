@@ -1,11 +1,15 @@
-import burgerStlyes from './burger.module.scss';
+import { FC } from "react";
+import classNames from "classnames";
+import burgerStlyes from "./burger.module.scss";
 
-export const Burger = () => {
+import { TBurger } from "../../types";
+
+export const Burger: FC<TBurger> = ({ handleBurgerClick, isOpenPanel }) => {
     return (
-        <button type="button" className={burgerStlyes['burger']}>
-            <span className="burger__line"></span>
-            <span className="burger__line"></span>
-            <span className="burger__line"></span>
+        <button onClick={handleBurgerClick} type="button" className={classNames(burgerStlyes["burger"], { [burgerStlyes["is-active"]]: isOpenPanel })}>
+            <span className={burgerStlyes["burger__line"]}></span>
+            <span className={burgerStlyes["burger__line"]}></span>
+            <span className={burgerStlyes["burger__line"]}></span>
         </button>
     );
 };

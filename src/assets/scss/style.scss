@@ -13,6 +13,7 @@
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
 }
 
 .container {
@@ -38,6 +39,14 @@
 .site-page{
     padding-top: 115px;
     flex: 1 1 auto;
+
+    @media(max-width: 1200px){
+        padding-top: 87px;
+    }
+
+    @media(max-width: 768px){
+        padding-top: 65px;
+    }
 }
 
 //*</Main grid>=================================================================================================

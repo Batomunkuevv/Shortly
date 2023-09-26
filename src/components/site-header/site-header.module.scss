@@ -7,19 +7,36 @@
     z-index: 100;
     transition: all 0.3s ease-in-out 0s;
 
+    @media (max-width: 1200px) {
+        top: 0;
+    }
+
     &.is-scrolling-down {
         transform: translate(0, calc(-100% - 27px));
     }
 
-    &__container {
-        max-width: calc($maxWidthContainer + 30px);
-        padding: 0 30px;
-        background: #fff;
-        border-radius: 50px;
-        transition: all 0.3s ease-in-out 0s;
-
-        &.is-scrolling {
+    &.is-scrolling {
+        @media (max-width: 1200px) {
+            background: #fff;
             box-shadow: 0 24px 48px rgba(25, 29, 50, 0.1);
+        }
+    }
+
+    &.is-open {
+        background: #fff;
+    }
+
+    &__container {
+        @media (min-width: 1200px) {
+            max-width: calc($maxWidthContainer + 30px);
+            padding: 0 30px;
+            background: #fff;
+            border-radius: 50px;
+            transition: all 0.3s ease-in-out 0s;
+
+            &.is-scrolling {
+                box-shadow: 0 24px 48px rgba(25, 29, 50, 0.1);
+            }
         }
     }
 
@@ -28,6 +45,15 @@
         display: flex;
         align-items: center;
         gap: 46px;
+
+        @media(max-width: 992px){
+            gap: 32px;
+        }
+
+        @media (max-width: 768px) {
+            padding: 16px 0;
+            justify-content: space-between;
+        }
     }
 
     &__panel {
@@ -36,6 +62,52 @@
         align-items: center;
         justify-content: space-between;
         flex: 1 1 auto;
+
+        @media (max-width: 768px) {
+            padding: 64px 0;
+            position: fixed;
+            top: 65px;
+            left: 0;
+            height: calc(100% - 65px);
+            width: 100%;
+            background: #fff;
+            opacity: 0;
+            transform: translate(-100%, 0);
+            visibility: hidden;
+            transition: all 0.5s ease-in-out 0s;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: auto;
+
+            &::-webkit-scrollbar {
+                width: 4px;
+                height: 4px;
+            }
+
+            &::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background-color: $colorMain;
+                border-radius: 20px;
+                border: 1px solid transparent;
+            }
+
+            scrollbar-width: 4px;
+            scrollbar-color: $colorMain #fff;
+
+            &.is-open {
+                opacity: 1;
+                visibility: visible;
+                transform: unset;
+            }
+        }
+
+        @media(max-width: 768px){
+            padding: 32px 0;
+        }
     }
 
     &__login {
@@ -45,8 +117,26 @@
         color: $colorFont;
         transition: all 0.3s ease-in-out 0s;
 
+        @media(max-width: 768px){
+            font-size: 20px;
+        }
+
+        @media(max-width: 576px){
+            font-size: 18px;
+        }
+            
         &:hover {
             color: $colorMain;
+        }
+    }
+
+    & button.site-header__btn{
+        @media(max-width: 768px){
+            font-size: 20px;
+        }
+
+        @media(max-width: 576px){
+            font-size: 18px;
         }
     }
 
@@ -57,15 +147,36 @@
 }
 
 .menu {
+    @media (max-width: 768px) {
+        margin-bottom: 48px;
+    }
+
     &__list {
         display: flex;
         align-items: center;
         gap: 30px;
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+            gap: 48px;
+        }
+
+        @media(max-width: 576px){
+            gap: 32px;
+        }
     }
 
     &__link {
         color: $colorFont;
         transition: all 0.3s ease-in-out 0s;
+
+        @media (max-width: 768px) {
+            font-size: 24px;
+        }
+
+        @media(max-width: 576px){
+            font-size: 18px;
+        }
 
         &:hover {
             color: $colorMain;

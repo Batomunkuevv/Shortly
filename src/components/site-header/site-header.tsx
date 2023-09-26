@@ -7,6 +7,7 @@ import { Burger } from "../burger";
 import { Button } from "../button";
 
 export const SiteHeader = () => {
+    const [isOpenPanel, setIsOpenPanel] = useState(false);
     const [isScrolling, setIsScrolling] = useState(false);
     const [isScrollingDown, setIsScrollingDown] = useState(false);
 
@@ -34,6 +35,11 @@ export const SiteHeader = () => {
         lastScrollTop = scrollTop;
     };
 
+    const handleBurgerClick = () => {
+        setIsOpenPanel((prev) => !prev);
+        document.body.classList.toggle('lock');
+    };
+
     useEffect(() => {
         window.addEventListener("scroll", initScrolling);
         window.addEventListener("scroll", animateHeader);
@@ -45,14 +51,14 @@ export const SiteHeader = () => {
     }, []);
 
     return (
-        <div className={classNames(headerStyles["site-header"], { [headerStyles["is-scrolling-down"]]: isScrollingDown })}>
+        <div className={classNames(headerStyles["site-header"], { [headerStyles["is-scrolling-down"]]: isScrollingDown }, { [headerStyles["is-open"]]: isOpenPanel }, { [headerStyles["is-scrolling"]]: isScrolling })}>
             <div className={classNames(headerStyles["site-header__container"], "container", { [headerStyles["is-scrolling"]]: isScrolling })}>
                 <div className={headerStyles["site-header__body"]}>
                     <a href="/" className="site-header__logo">
                         <img src={logo} alt="Shortly Logo" title="Shortly Logo" />
                     </a>
-                    <div className={headerStyles["site-header__panel"]}>
-                        <nav className="menu">
+                    <div className={classNames(headerStyles["site-header__panel"], { [headerStyles["is-open"]]: isOpenPanel })}>
+                        <nav className={headerStyles['menu']}>
                             <ul className={headerStyles["menu__list"]}>
                                 <li className="menu__item">
                                     <a href="/" className={headerStyles["menu__link"]}>
@@ -75,10 +81,10 @@ export const SiteHeader = () => {
                             <button type="button" className={headerStyles["site-header__login"]}>
                                 Login
                             </button>
-                            <Button size="small">Sign Up</Button>
+                            <Button size="small" extraClasses={headerStyles['site-header__btn']}>Sign Up</Button>
                         </div>
                     </div>
-                    <Burger />
+                    <Burger handleBurgerClick={handleBurgerClick} isOpenPanel={isOpenPanel} />
                 </div>
             </div>
         </div>

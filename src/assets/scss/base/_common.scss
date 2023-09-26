@@ -50,12 +50,29 @@ h4 {
 h1 {
     font-size: 77px;
     line-height: 120%;
+
+    @media (max-width: 1200px) {
+        font-size: 64px;
+        line-height: 150%;
+    }
+
+    @media (max-width: 992px) {
+        font-size: 48px;
+    }
+
+    @media (max-width: 768px) {
+        font-size: 40px;
+    }
 }
 
 h2 {
     margin-bottom: 28px;
     line-height: 125%;
     font-size: 38px;
+
+    @media (max-width: 768px) {
+        font-size: 32px;
+    }
 }
 
 h3 {
@@ -140,6 +157,10 @@ svg {
     color: #fff;
     font-weight: 700;
     font-size: 20px;
+
+    @media(max-width: 768px){
+        font-size: 16px;
+    }
 
     &--small {
         padding: 8px 22px;
